@@ -1,6 +1,8 @@
 import 'package:inject/inject.dart';
 
 import 'package:yessoft/consts/urls.dart';
+import 'package:yessoft/module_auth/preferences/auth_pereferences.dart';
+import 'package:yessoft/module_home/response/home_response/home_response.dart';
 import 'package:yessoft/module_network/http_client/http_client.dart';
 
 import '../../request/login_request/login_request.dart';
@@ -14,14 +16,14 @@ class AuthRepository {
   AuthRepository(this._apiClient);
 
   Future<bool> createUser(RegisterRequest request) async {
-    var result = await _apiClient.post(Urls.API_SIGN_UP, request.toJson());
+    var result = await _apiClient.post(Urls.SIGN_UP, request.toJson());
 
     return result != null;
   }
 
   Future<LoginResponse> getToken(LoginRequest loginRequest) async {
     var result = await _apiClient.post(
-      Urls.CREATE_TOKEN_API,
+      Urls.LOGIN,
       loginRequest.toJson(),
     );
 
@@ -29,5 +31,15 @@ class AuthRepository {
       return null;
     }
     return LoginResponse.fromJson(result);
+  }
+
+  Future<AllUser> getAllProfile() async {
+    final AuthPreferences _prefsHelper =AuthPreferences();
+    var token = await _prefsHelper.getToken();
+    dynamic response = await _apiClient.get(
+      Urls.ALL_PROFILE,
+      headers: {'Authorization': 'Bearer $token'},
+    );
+    return AllUser.fromJson(response);
   }
 }

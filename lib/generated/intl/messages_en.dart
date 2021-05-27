@@ -55,6 +55,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "signOut" : MessageLookupByLibrary.simpleMessage("Sign out"),
     "startWriting" : MessageLookupByLibrary.simpleMessage("Start Writing"),
     "storeOwner" : MessageLookupByLibrary.simpleMessage("Store Owner"),
-    "syria" : MessageLookupByLibrary.simpleMessage("Syria")
+    "syria" : MessageLookupByLibrary.simpleMessage("Syria"),
+
+    "required" : MessageLookupByLibrary.simpleMessage("This field is required")
+
   };
 }

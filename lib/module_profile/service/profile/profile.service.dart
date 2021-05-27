@@ -1,5 +1,4 @@
 import 'package:yessoft/module_profile/manager/profile/profile.manager.dart';
-import 'package:yessoft/module_profile/request/branch/create_branch_request.dart';
 import 'package:yessoft/module_profile/request/profile/profile_request.dart';
 import 'package:inject/inject.dart';
 
@@ -11,13 +10,14 @@ class ProfileService {
     this._manager,
   );
 
-  Future<bool> createProfile(String city, int branch) async {
+  Future<bool> createProfile(String city, String username , String story) async {
     ProfileRequest profileRequest = new ProfileRequest(
+      userName: username ,
       city: city,
-      branch: branch,
+      story: story
     );
 
-    return await _manager.createProfile(profileRequest);
+    return await _manager.updateProfile(profileRequest);
   }
 
 }

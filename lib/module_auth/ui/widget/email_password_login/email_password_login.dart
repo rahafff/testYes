@@ -1,6 +1,7 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:yessoft/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:yessoft/module_theme/service/theme_service/theme_service.dart';
 
 import '../../../authorization_routes.dart';
 
@@ -25,9 +26,11 @@ class _EmailPasswordLoginState extends State<EmailPasswordForm> {
   final TextEditingController _loginPasswordController =
       TextEditingController();
   TextStyle style = GoogleFonts.montserrat();
+  bool loading = false;
   @override
   void initState() {
     super.initState();
+    loading = false;
   }
 
   @override
@@ -78,19 +81,24 @@ class _EmailPasswordLoginState extends State<EmailPasswordForm> {
     final loginButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
+      color: AppThemeDataService.PrimaryDarker,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
                   if (_loginFormKey.currentState.validate()) {
+                    setState(() {
+                      loading = true;
+                    });
                         widget.onLoginRequest(
                           _loginEmailController.text,
                           _loginPasswordController.text,
                         );
                       }
         },
-        child: Text("Login",
+        child: loading ?
+        CircularProgressIndicator():
+        Text("Login",
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.white, fontWeight: FontWeight.bold)),
@@ -103,8 +111,6 @@ class _EmailPasswordLoginState extends State<EmailPasswordForm> {
         key: _loginFormKey,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Column(
-//          crossAxisAlignment: CrossAxisAlignment.stretch,
-//          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Padding(
               padding: const EdgeInsets.all(10.0),

@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:yessoft/module_auth/enums/auth_source.dart';
-import 'package:yessoft/module_auth/enums/user_type.dart';
 import 'package:yessoft/module_auth/state_manager/auth_state_manager/auth_state_manager.dart';
-import 'package:yessoft/module_auth/ui/widget/auth_login_option/auth_login_option.dart';
-import 'package:yessoft/module_auth/ui/widget/auth_options_form/auth_options_form.dart';
 
 import '../../../../module_auth/ui/states/auth_states/auth_state.dart';
 import '../../../../module_auth/ui/widget/email_password_login/email_password_login.dart';
-import '../../../../module_auth/ui/widget/phone_login/phone_login.dart';
 
 class AuthStateInit extends AuthState {
   AuthStateInit(AuthStateManager stateManager) : super(stateManager);
@@ -52,8 +47,8 @@ class AuthStateInit extends AuthState {
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.1),
                     EmailPasswordForm(
-                      onLoginRequest: (email, password) {
-                        stateManager.signInWithEmailAndPassword(email, password,);                      },
+                      onLoginRequest: (username, password) {
+                        stateManager.loginWithUsernameAndPassword(username, password,);                      },
                     ),
                             FlatButton(child: Text("signup"),onPressed: (){
                       stateManager.registerWithEmailAndPassword();

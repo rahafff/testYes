@@ -1,5 +1,4 @@
 import 'package:yessoft/module_profile/repository/profile/profile.repository.dart';
-import 'package:yessoft/module_profile/request/branch/create_branch_request.dart';
 import 'package:yessoft/module_profile/request/profile/profile_request.dart';
 import 'package:inject/inject.dart';
 
@@ -11,8 +10,8 @@ class ProfileManager {
     this._repository,
   );
 
-  Future<bool> createProfile(ProfileRequest profileRequest) async =>
-      await _repository.createProfile(profileRequest);
+  Future<bool> updateProfile(ProfileRequest profileRequest) async =>
+      await _repository.updateProfile(profileRequest);
 
 
 }

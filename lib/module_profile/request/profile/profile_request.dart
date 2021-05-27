@@ -1,17 +1,20 @@
 class ProfileRequest {
-  int branch;
+  String userName;
   String city;
+  String story;
+//  String image;
+//  String date;
+//  String dateAndTime;
 
-  ProfileRequest({
-    this.branch,
-    this.city,
-  });
+
+  ProfileRequest({this.userName, this.city, this.story});
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
 
+    data['userName'] = this.userName;
     data['city'] = this.city;
-    data['branch'] = this.branch;
+    data['story'] = this.story;
 
     return data;
   }

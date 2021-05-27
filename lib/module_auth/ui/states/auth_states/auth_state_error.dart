@@ -22,7 +22,7 @@ class AuthStateError extends AuthState {
             child: Card(
               child: LoginForm(
                 requestEmailAndPasswordSignIn: (email, password) {
-                  stateManager.signInWithEmailAndPassword(email, password);
+                  stateManager.loginWithUsernameAndPassword(email, password);
                 },
 
               ),

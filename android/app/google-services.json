@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "546000867878",
-    "project_id": "flutter-boilerplate-5f3fc",
-    "storage_bucket": "flutter-boilerplate-5f3fc.appspot.com"
+    "project_number": "1052772262285",
+    "project_id": "yestest-c3852",
+    "storage_bucket": "yestest-c3852.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:546000867878:android:d49c2606a463c586340ce7",
+        "mobilesdk_app_id": "1:1052772262285:android:0fedcac00f13baec991dc4",
         "android_client_info": {
-          "package_name": "de.yes_soft.flutter_boilerplate"
+          "package_name": "com.yesSoft.testYes"
         }
       },
       "oauth_client": [
         {
-          "client_id": "546000867878-7klhil01f2sn1qqprikr2a21p6p1h7f6.apps.googleusercontent.com",
+          "client_id": "1052772262285-hck53svoi5lq2f8690mbgte2eccecu7c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA2CprfQac6HDRoRp1Tp3JpmsDmc_KTxCk"
+          "current_key": "AIzaSyBNqyfasAtKOio7IBVdHURM8b9VZmKJbNY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "546000867878-7klhil01f2sn1qqprikr2a21p6p1h7f6.apps.googleusercontent.com",
+              "client_id": "1052772262285-hck53svoi5lq2f8690mbgte2eccecu7c.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

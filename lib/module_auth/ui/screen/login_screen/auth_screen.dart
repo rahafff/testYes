@@ -1,11 +1,10 @@
 import 'dart:async';
 
-import 'package:yessoft/module_auth/enums/user_type.dart';
 import 'package:yessoft/module_auth/state_manager/auth_state_manager/auth_state_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:inject/inject.dart';
 import 'package:yessoft/module_auth/ui/states/auth_states/auth_state.dart';
-import 'package:yessoft/module_auth/ui/states/auth_states/auth_state_init.dart';
+import 'package:yessoft/module_auth/ui/states/auth_states/auth_state_register.dart';
 
 @provide
 class AuthScreen extends StatefulWidget {
@@ -32,7 +31,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   void initState() {
     super.initState();
-    _currentStates = AuthStateInit(widget._stateManager);
+    _currentStates = AuthStateRegister(widget._stateManager);
     _stateSubscription = widget._stateManager.stateStream.listen((event) {
       print('Got Event!');
       if (mounted) {

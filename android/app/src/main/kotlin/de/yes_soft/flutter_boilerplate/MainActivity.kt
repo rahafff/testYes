@@ -1,4 +1,4 @@
-package de.yes_soft.flutter_boilerplate
+package com.yesSoft.testYes
 
 import io.flutter.embedding.android.FlutterActivity
 

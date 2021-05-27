@@ -1332,27 +1332,6 @@
             </list>
           </value>
         </entry>
-        <entry key="video_player">
-          <value>
-            <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-1.0.1/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="video_player_platform_interface">
-          <value>
-            <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_platform_interface-2.2.0/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="video_player_web">
-          <value>
-            <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_web-0.1.4+1/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="vin_decoder">
           <value>
             <list>
@@ -1611,9 +1590,6 @@
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/validate-1.7.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/validators-2.0.1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0-nullsafety.3/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-1.0.1/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_platform_interface-2.2.0/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_web-0.1.4+1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/vin_decoder-0.1.3/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/vm_service-5.5.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/watcher-0.9.7+15/lib" />

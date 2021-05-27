@@ -7,6 +7,8 @@ class AppUser {
   User credential;
 //  AuthSource authSource;
 //  UserRole userRole;
+  String username;
+  String password;
 
-  AppUser(this.credential);
+  AppUser(this.credential ,this.password, this.username);
 }

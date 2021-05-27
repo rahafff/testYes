@@ -37,8 +37,8 @@ dependencies:
   # Camera
   image_picker: ^0.6.7+14
 
-  # Video
-  video_player: ^1.0.0
+#  # Video
+#  video_player: ^1.0.0
 
   # Paths
   path_provider: ^1.6.24

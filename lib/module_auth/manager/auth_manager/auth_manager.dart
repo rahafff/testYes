@@ -1,4 +1,6 @@
 import 'package:inject/inject.dart';
+import 'package:yessoft/module_home/response/home_response/home_response.dart';
+import 'package:yessoft/module_home/response/home_response/home_response.dart';
 
 import '../../repository/auth/auth_repository.dart';
 import '../../request/login_request/login_request.dart';
@@ -15,4 +17,7 @@ class AuthManager {
 
   Future<LoginResponse> login(LoginRequest loginRequest) =>
       _authRepository.getToken(loginRequest);
+
+  Future<AllUser> AllUserProfile() =>
+      _authRepository.getAllProfile();
 }

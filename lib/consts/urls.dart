@@ -3,8 +3,8 @@ class Urls {
   static const String BASE_API = DOMAIN + '/html/public/index.php';
 
 
-  static const API_SIGN_UP = BASE_API + '/user';
-  static const CREATE_TOKEN_API = BASE_API + '/login_check';
+  static const SIGN_UP = BASE_API + '/user';
+  static const LOGIN = BASE_API + '/login_check';
 
   static const PROFILE = BASE_API + '/userprofile';
   static const ALL_PROFILE = BASE_API + '/userprofileall';
