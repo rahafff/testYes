@@ -2,9 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yessoft/module_auth/service/auth_service/auth_service.dart';
 import 'package:yessoft/module_auth/state_manager/auth_state_manager/auth_state_manager.dart';
-import 'package:yessoft/module_home/manager/home/home.manager.dart';
 import 'package:yessoft/module_home/response/home_response/home_response.dart';
-import 'package:yessoft/module_home/service/home/home.service.dart';
 import 'package:yessoft/module_home/ui/widget/userCard.dart';
 
 class HomeScreen extends StatefulWidget {

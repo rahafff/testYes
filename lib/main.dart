@@ -14,6 +14,7 @@ import 'di/components/app.component.dart';
 import 'generated/l10n.dart';
 import 'module_auth/authoriazation_module.dart';
 import 'module_auth/authorization_routes.dart';
+import 'module_profile/profile_module.dart';
 import 'module_settings/settings_module.dart';
 
 void main() async {
@@ -32,15 +33,15 @@ void main() async {
 class MyApp extends StatefulWidget {
   final AppThemeDataService _themeDataService;
   final LocalizationService _localizationService;
-  final ChatModule _chatModule;
-  final SettingsModule _settingsModule;
+  final ProfileModule _profileModule;
+//  final SettingsModule _settingsModule;
   final AuthorizationModule _authorizationModule;
 
   MyApp(
     this._themeDataService,
     this._localizationService,
-    this._chatModule,
-    this._settingsModule,
+    this._profileModule,
+//    this._settingsModule,
     this._authorizationModule,
   );
 
@@ -74,8 +75,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     var fullRoutesList = <String, WidgetBuilder>{};
     fullRoutesList.addAll(widget._authorizationModule.getRoutes());
-    fullRoutesList.addAll(widget._chatModule.getRoutes());
-    fullRoutesList.addAll(widget._settingsModule.getRoutes());
+    fullRoutesList.addAll(widget._profileModule.getRoutes());
+//    fullRoutesList.addAll(widget._chatModule.getRoutes());
+//    fullRoutesList.addAll(widget._settingsModule.getRoutes());
 
     // TODO: Plug your Module Here
 

@@ -90,10 +90,17 @@ class ApiClient {
         receiveTimeout: 60000,
         connectTimeout: 60000,
       ));
+      if (headers != null) {
+        if (headers['Authorization'] != null) {
+          _logger.info(tag, 'Adding Auth Header');
+          client.options.headers['Authorization'] = headers['Authorization'];
+        }
+      }
       var response = await client.put(
         url,
         queryParameters: queryParams,
         data: json.encode(payLoad),
+
       );
       return _processResponse(response);
     } catch (e) {
@@ -102,42 +109,14 @@ class ApiClient {
     }
   }
 
-  Future<Map<String, dynamic>> delete(
-    String url, {
-    Map<String, String> queryParams,
-    Map<String, String> headers,
-  }) async {
-    try {
-      _logger.info(tag, 'Requesting DELETE to: ' + url);
-      _logger.info(tag, 'Headers: ' + headers.toString());
-      _logger.info(tag, 'Query: ' + queryParams.toString());
-      Dio client = Dio(BaseOptions(
-        sendTimeout: 60000,
-        receiveTimeout: 60000,
-        connectTimeout: 60000,
-      ));
-      if (headers != null) {
-        if (headers['Authorization'] != null) {
-          _logger.info(tag, 'Adding Auth Header');
-          client.options.headers['Authorization'] = headers['Authorization'];
-        }
-      }
-      var response = await client.delete(
-        url,
-        queryParameters: queryParams,
-      );
-      return _processResponse(response);
-    } catch (e) {
-      _logger.error(tag, e.toString() + ' ' + url, StackTrace.current);
-      return null;
-    }
-  }
 
   Map<String, dynamic> _processResponse(Response response) {
     if (response.statusCode >= 200 && response.statusCode < 400) {
+      print("response goode");
       _logger.info(tag, response.data.toString());
       return response.data;
     } else {
+      print("errorr heeree");
       _logger.error(tag, response.statusCode.toString(), StackTrace.current);
       return null;
     }

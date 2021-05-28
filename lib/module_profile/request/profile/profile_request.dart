@@ -15,6 +15,7 @@ class ProfileRequest {
     data['userName'] = this.userName;
     data['city'] = this.city;
     data['story'] = this.story;
+    data['image'] = 'sss';
 
     return data;
   }
