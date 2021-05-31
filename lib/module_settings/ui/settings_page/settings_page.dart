@@ -122,7 +122,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       AuthorizationRoutes.AUTH_SCREEN,
                                       (route) => false);
                                 });
-                              })
+                              }
+                              )
                         ],
                       )
                     : Flex(

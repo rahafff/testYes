@@ -1,4 +1,5 @@
 import 'package:yessoft/module_auth/enums/user_type.dart';
+import 'package:yessoft/module_auth/service/auth_service/auth_service.dart';
 import 'package:yessoft/module_auth/state_manager/auth_state_manager/auth_state_manager.dart';
 import 'package:yessoft/module_auth/ui/states/auth_states/auth_state.dart';
 import 'package:yessoft/module_auth/ui/widget/auth_login_option/auth_login_option.dart';
@@ -9,7 +10,7 @@ import 'package:flutter/material.dart';
 class AuthStateError extends AuthState {
   String errorMsg;
 
-  AuthStateError(AuthStateManager screen, this.errorMsg) : super(screen);
+  AuthStateError(AuthStateManager screen, this.errorMsg ,AuthService service) : super(screen,service);
 
   @override
   Widget getUI(BuildContext context) {

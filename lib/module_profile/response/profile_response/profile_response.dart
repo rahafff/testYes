@@ -50,9 +50,9 @@ class Data {
   dynamic dateAndTime;
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
-    userName: json["userName"] ?? "hello",
-    city: json["city"]?? "hello",
-    story: json["story"]?? "hello",
+    userName: json["userName"] ?? "null",
+    city: json["city"]?? "null",
+    story: json["story"]?? "null",
     image: json["image"]?? "hello",
     date: json["date"]?? "hello",
     dateAndTime: json["dateAndTime"]?? "hello",

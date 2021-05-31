@@ -93,6 +93,29 @@ class AuthService {
     });
   }
 
+  Future<void> LoginInWithEmailAndPassword(
+      String email,
+      String password,
+      ) async {
+    try {
+      var creds = await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      print("im here"+ creds.toString());
+      await loginWithUsernameAndPassword(creds.user.uid , password);
+      ;
+    } catch (e) {
+      if (e is FirebaseAuthException) {
+        FirebaseAuthException x = e;
+        Logger().info('AuthService', 'Got Authorization Error: ${x.message}');
+        await  Fluttertoast.showToast(msg: x.message);
+      } else {
+        await  Fluttertoast.showToast(msg: e.toString());
+      }
+    }
+  }
 
 
   /// login to Firebase Authentication with an Email and Password

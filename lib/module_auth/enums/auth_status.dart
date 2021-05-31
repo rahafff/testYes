@@ -1,1 +1,1 @@
-enum AuthStatus {AUTHORIZED ,REGISTER }
+enum AuthStatus {AUTHORIZED ,REGISTER ,NOT_LOGGED_IN}

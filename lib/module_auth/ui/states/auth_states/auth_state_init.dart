@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:yessoft/module_auth/service/auth_service/auth_service.dart';
 import 'package:yessoft/module_auth/state_manager/auth_state_manager/auth_state_manager.dart';
 
 import '../../../../module_auth/ui/states/auth_states/auth_state.dart';
 import '../../../../module_auth/ui/widget/email_password_login/email_password_login.dart';
 
 class AuthStateInit extends AuthState {
-  AuthStateInit(AuthStateManager stateManager) : super(stateManager);
+  AuthStateInit(AuthStateManager stateManager ,AuthService service) : super(stateManager ,service);
 
 //  @override
 //  Widget getUI(BuildContext context) {

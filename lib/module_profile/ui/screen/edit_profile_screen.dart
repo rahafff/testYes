@@ -42,13 +42,14 @@ class _EditProfileState extends State<EditProfileScreen> {
         ),
         centerTitle: false,
         backgroundColor: AppThemeDataService.PrimaryDarker,
+        iconTheme: IconThemeData(color: Colors.white),
         actions: [
           InkWell(
             onTap: () async{
              bool n =await editPro();
               if(n){
                   await Navigator.of(context)
-                      .pushReplacementNamed(ProfileRoutes.ROUTE_Profile);
+                      .pop();
               }
             },
             child: Padding(

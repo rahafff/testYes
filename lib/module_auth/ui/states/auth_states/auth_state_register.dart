@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:yessoft/module_auth/service/auth_service/auth_service.dart';
 import 'package:yessoft/module_auth/state_manager/auth_state_manager/auth_state_manager.dart';
 import 'package:yessoft/module_auth/ui/states/auth_states/auth_state.dart';
 import 'package:yessoft/module_auth/ui/widget/email_password_register/email_password_register.dart';
 class AuthStateRegister extends AuthState {
-  AuthStateRegister(AuthStateManager stateManager) : super(stateManager);
+  AuthStateRegister(AuthStateManager stateManager ,AuthService service) : super(stateManager ,service);
 
   @override
   Widget getUI(BuildContext context) {

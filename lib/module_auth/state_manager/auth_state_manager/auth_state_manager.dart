@@ -27,37 +27,37 @@ class AuthStateManager {
   AuthStateManager(this._authService) {
     _authService.authListener.listen((event) {
       switch (event) {
-//        case AuthStatus.NOT_LOGGED_IN:
-//        // TODO: Handle this case.
-//          _stateSubject.add(AuthStateInit(this));
-//          break;
+        case AuthStatus.NOT_LOGGED_IN:
+        // TODO: Handle this case.
+          _stateSubject.add(AuthStateInit(this ,_authService));
+          break;
 //        case AuthStatus.UNVERIFIED:
 //        // TODO: Handle this case.
 //          _stateSubject.add(AuthStateError(this, 'Unverified Account'));
 //          break;
         case AuthStatus.AUTHORIZED:
         // TODO: Handle this case.
-          _stateSubject.add(AuthStateSuccess(this));
+          _stateSubject.add(AuthStateSuccess(this,_authService));
           break;
         case AuthStatus.REGISTER:
         // TODO: Handle this case.
-          _stateSubject.add(AuthStateRegister(this));
+          _stateSubject.add(AuthStateRegister(this,_authService));
           break;
       }
     }).onError((error) {
       print('got Error');
-      _stateSubject.add(AuthStateError(this, error));
+      _stateSubject.add(AuthStateError(this, error,_authService));
     });
   }
 
 
   void loginWithUsernameAndPassword(
        String username , String password) {
-    _authService.loginWithUsernameAndPassword(username , password);
+    _authService.LoginInWithEmailAndPassword(username , password);
   }
 
   void registerWithEmailAndPassword(){
-    _stateSubject.add(AuthStateRegister(this));
+    _stateSubject.add(AuthStateRegister(this,_authService));
 }
   void signUpWithEmailAndPassword(String email , String password , String username){
     _authService.registerWithEmailAndPassword(email, password, username);

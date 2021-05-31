@@ -30,13 +30,16 @@ class _ProfileState extends State<ProfileScreen> {
         title: Text('Profile' , style: TextStyle(color: Colors.white),),
         centerTitle: false,
         backgroundColor: AppThemeDataService.PrimaryDarker,
+        iconTheme: IconThemeData(color: Colors.white),
         actions: [
           InkWell(
             onTap: (){
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => EditProfileScreen(widget.profileService,model)),
-              );
+              ).then((value){
+                fetchData();
+              });
             },
             child: Padding(
               padding: const EdgeInsets.all(20.0),
@@ -46,7 +49,9 @@ class _ProfileState extends State<ProfileScreen> {
         ],
       ),
       body: isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? Center(child: CircularProgressIndicator(
+        valueColor: new AlwaysStoppedAnimation<Color>(AppThemeDataService.PrimaryDarker),
+      ))
           : Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(

@@ -19,9 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
   AllUser response;
   List<Datum> users;
 
-//  AuthService userService ;
-// =AllProfileService();
-
 
   @override
   void initState() {
@@ -29,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     loading = false;
     users = [];
     fetchData();
+    print("back");
 
   }
 

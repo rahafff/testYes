@@ -36,6 +36,10 @@ class _EmailPasswordLoginState extends State<EmailPasswordForm> {
   @override
   Widget build(BuildContext context) {
     final node = FocusScope.of(context);
+    Future.delayed(Duration(seconds: 30), () {
+      loading = false;
+      if (mounted) setState(() {});
+    });
     _loginEmailController.text = widget.email;
     _loginPasswordController.text = widget.password;
 
@@ -97,7 +101,13 @@ class _EmailPasswordLoginState extends State<EmailPasswordForm> {
                       }
         },
         child: loading ?
-        CircularProgressIndicator():
+        SizedBox(
+          width: 15,
+          height: 15,
+          child: CircularProgressIndicator(
+            valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+          ),
+        ):
         Text("Login",
             textAlign: TextAlign.center,
             style: style.copyWith(
